@@ -27,7 +27,7 @@ camera.position.set(0, 2, 3);
 
 const canvas = document.createElement('canvas');
 const container = document.querySelector(".bg-universe");
-container.appendChild(canvas);
+// container.appendChild(canvas);
 const renderer = new WebGLRenderer({ canvas });
 renderer.setSize(innerWidth, innerHeight);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
