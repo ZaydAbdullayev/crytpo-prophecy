@@ -10,7 +10,7 @@ export const Card = ({ item, prices, ...props }) => {
       <b className="df aic gap-5">
         {(
           <AnimatedNumbers
-            animateToNumber={prices[item.id]?.usd?.toString()}
+            animateToNumber={parseFloat(prices[item.id]?.usd)}
             transitions={(index) => ({
               type: "spring",
               duration: index + 0.3,
