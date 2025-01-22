@@ -12,7 +12,7 @@ export const Card = ({ item, prices, ...props }) => {
           <AnimatedNumbers
             animateToNumber={parseFloat(prices[item.id]?.usd)}
             transitions={(index) => ({
-              type: "spring",
+              type: "tween",
               duration: index + 0.3,
             })}
           />
