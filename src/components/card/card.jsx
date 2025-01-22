@@ -1,6 +1,6 @@
 import "./card.css";
 import { Loader } from "../decorations/loader";
-import AnimatedNumbers from "react-animated-numbers";
+import CountUp from "react-countup";
 
 export const Card = ({ item, prices, ...props }) => {
   return (
@@ -9,12 +9,13 @@ export const Card = ({ item, prices, ...props }) => {
       <p>{item.name}</p>
       <b className="df aic gap-5">
         {(
-          <AnimatedNumbers
-            animateToNumber={parseFloat(prices[item.id]?.usd)}
-            transitions={(index) => ({
-              type: "tween",
-              duration: index + 0.3,
-            })}
+          <CountUp
+            start={0.0}
+            end={prices[item.id]?.usd}
+            duration={5}
+            separator=" "
+            decimals={prices[item.id]?.usd?.toString()?.split(".")[1]?.length}
+            decimal=","
           />
         ) || <Loader small={true} />}
         $
