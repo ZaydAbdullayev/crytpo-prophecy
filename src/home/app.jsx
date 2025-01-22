@@ -11,7 +11,7 @@ import { getCryptoPrices } from "../context/fetch.service";
 import { ShineButton } from "../components/buttons/buttons";
 import tg from "../assets/tg.png";
 import tw from "../assets/twitter-x-logo-black-square-rounded-20852.png";
-// import { TypeAnimation } from "react-type-animation";
+import { TypeAnimation } from "react-type-animation";
 
 export const App = () => {
   const [getInfo, setGetInfo] = useState(false);
@@ -71,7 +71,7 @@ export const App = () => {
           {isOdd(rowIndex) && <Pushshing type="normal" />}
           {row.map((coin) => (
             <Card
-              key={coin.id}
+              key={coin?.id}
               item={coin}
               prices={prices}
               onClick={() => getInformation(coin)}
@@ -87,10 +87,14 @@ export const App = () => {
       <div className="df aic gap-20 questions">
         <Baby />
         <div className="df fdc">
-          {questions.map((question, index) => (
-            <div key={index} className="question">
-              {question}
-            </div>
+          {questions?.map((question, index) => (
+            <TypeAnimation
+              key={index}
+              sequence={[question, 3000]}
+              speed={200}
+              style={{ fontSize: "28px" }}
+              repeat={Infinity}
+            />
           ))}
         </div>
       </div>
@@ -114,15 +118,14 @@ export const App = () => {
             <h2>All data about bitcoin is analyzing...</h2>
           </>
         ) : (
-          <i>{prophacy}</i>
-          // <TypeAnimation
-          //   splitter={(str) => str.split(/(?= )/)}
-          //   sequence={[prophacy, 10000000, ""]}
-          //   speed={{ type: "keyStrokeDelayInMs", value: 50 }}
-          //   omitDeletionAnimation={true}
-          //   style={{ fontSize: "1em", display: "block", textAlign: "center" }}
-          //   repeat={1}
-          // />
+          <TypeAnimation
+            splitter={(str) => str?.toString()?.split(/(?= )/)}
+            sequence={[prophacy, 10000000, ""]}
+            speed={{ type: "keyStrokeDelayInMs", value: 50 }}
+            omitDeletionAnimation={true}
+            style={{ fontSize: "1em", display: "block", textAlign: "center" }}
+            repeat={1}
+          />
         )}
       </ProphecyModal>
       <LinesBg />
