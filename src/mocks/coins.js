@@ -12,68 +12,73 @@ import tether from '../assets/9297452_usdt_blockchain_coins_cryptocurrency_crypt
 
 export const coins = [
     [{
-        id: 'coin-1',
+        id: 'bitcoin',
         name: 'Bitcoin (BTC)',
         icon: bitcoin,
-        price: 50000,
     },
     {
-        id: 'coin-2',
+        id: 'ethereum',
         name: 'Ethereum (ETH)',
         icon: ethereum,
-        price: 4000,
     },
     {
-        id: 'coin-3',
+        id: 'litecoin',
         name: 'Litecoin (LTC)',
         icon: litecoin,
-        price: 200,
     },
     {
-        id: 'coin-4',
+        id: 'monero',
         name: 'Monero (XMR)',
         icon: monero,
-        price: 300,
     },
     {
-        id: 'coin-5',
+        id: 'ripple',
         name: 'Ripple (XRP)',
         icon: ripple,
-        price: 1,
     },
     {
-        id: 'coin-6',
+        id: 'zcash',
         name: 'Zcash (ZEC)',
         icon: zcash,
-        price: 100,
     }],
     [{
-        id: 'coin-7',
+        id: 'dogecoin',
         name: 'Dogecoin (DOGE)',
         icon: dogecoin,
-        price: 0.3,
     },
     {
-        id: 'coin-8',
+        id: 'solana',
         name: 'Solana (SOL)',
         icon: solana,
-        price: 100,
     },
     {
-        id: 'coin-9',
+        id: 'polkadot',
         name: 'Polkadot (DOT)',
         icon: polkadot,
-        price: 30,
     },
     {
-        id: 'coin-10',
+        id: 'tether',
         name: 'Tether (USDT)',
         icon: tether,
-        price: 1,
     },]
-
 ]
 
+export const coin_ids = ['bitcoin', 'ethereum', 'ripple', 'litecoin', 'dogecoin', 'monero', 'zcash', 'solana', 'polkadot', 'tether'];
+
+export const prophecys = {
+    bitcoin: "In the last two cycles, Bitcoin's trading volume has increased by 17%, and the RSI indicator crossed above 50. If the market sustains the $105,000 level over the next three weeks, Bitcoin is projected to surpass $120,000 by the next full moon. This might mark the beginning of a new bull market. 🌕📈",
+    ethereum: "Ethereum has tested the $3,300 level multiple times in the last 48 hours. With a 22% increase in smart contract activity, the ecosystem is growing. If the $3,500 resistance breaks, Ethereum could climb to $4,000 within the next 12 days, potentially positioning itself for the next wave of DeFi projects. 💡🔗",
+    ripple: "Ripple is finding support following positive news from the SEC case. Currently consolidating around $0.60, a breakout above $0.65 could see XRP rising by 30% in the next quarter, fueled by its adoption in international payment systems. 🌊💸",
+    litecoin: "Litecoin's mining difficulty has increased by 15% last week, tightening its supply. If the 14-day moving average breaks $160, Litecoin is expected to test the $200 level next month, potentially becoming the sleeper star of the bull season due to its fast and low-cost transactions. 🌟⛓️",
+    dogecoin: "Dogecoin is gaining traction again following Elon Musk's recent endorsements. With $0.08 as a strong support level, if social media engagement rises by 30% this week, Dogecoin could reach $0.12, driven by the hype of meme-based cryptocurrencies. 🐾🚀",
+    monero: "Monero's focus on privacy continues to attract demand despite regulatory pressures. Holding strong above $160 with a 40% increase in volume, a breakout above $170 could lead to $200 in the coming weeks, as the demand for private transactions grows in an increasingly surveillance-oriented world. 🔐💰",
+    zcash: "Zcash is gaining attention in traditional finance due to its zk-SNARK technology. Holding the $40 support level, a 15% increase in trading volume could see Zcash breaking $50 and rising to $60, establishing itself as the 'digital gold' of secure transactions. 🌌🔒",
+    solana: "With transaction speeds 300% faster than other blockchains, Solana continues to shine despite minor network outages. If the $30 level is broken, Solana could reach $40, boosted by growth in the NFT marketplace and upcoming mainnet upgrades. ☀️🖼️",
+    polkadot: "Polkadot's parachain ecosystem is strengthening its interoperability with other chains. Finding support at $5.50, breaking the $6 resistance could lead to a surge towards $7.50, driven by increased staking rewards and ecosystem expansion. 🔗🌈",
+    tether: "Tether trades at a stable value but acts as the pulse of the market's liquidity. If the total market volume rises by 10% this week, demand for Tether will increase, indirectly boosting the prices of other crypto assets. Tether remains the safe harbor in stormy crypto seas. ⚓💵"
+};
+
+    
 export const comments = [
     {
         id: 'comment-1',

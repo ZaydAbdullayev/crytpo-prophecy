@@ -1,6 +1,5 @@
 import "./button.css";
 import gif from "../../assets/2yqT.gif";
-import pushshing from "../../assets/picmix.com_2376499.gif";
 
 const GlitchButton = ({ children }) => {
   return (
@@ -13,26 +12,14 @@ const GlitchButton = ({ children }) => {
   );
 };
 
-const ShineButton = ({ children }) => {
+const ShineButton = ({ children, type }) => {
   return (
     <button
-      className={`button-universal-size button-shine gelatine`}
+      className={`df aic gap-10 button-universal-size button-shine gelatine ${type}`}
       role="button"
     >
       {children}
     </button>
-  );
-};
-
-const NotAvaibleButton = ({ children }) => {
-  return (
-    <div className="not-avaible-container">
-      <img src={pushshing} alt="not avaible" className="not-avaible-gif" />
-      <div className="letterpress">
-        <p>{children}</p>
-      </div>
-    
-    </div>
   );
 };
 
@@ -50,4 +37,4 @@ const SoonButton = ({ children }) => {
   );
 };
 
-export { GlitchButton, ShineButton, NotAvaibleButton, SoonButton };
+export { GlitchButton, ShineButton, SoonButton };

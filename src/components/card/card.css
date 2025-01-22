@@ -2,11 +2,13 @@
   width: 180px;
   height: 180px;
   padding: 10px 15px;
-  background-color: #111;
+  background-color: #0c0c0c;
   border: 1px solid #222;
   background-image: url("../../assets/2yqT.gif");
   background-size: cover;
   background-position: center;
+  cursor: pointer;
+  box-shadow: 0 0 10px 10px #0002;
 
   border-radius: 10px;
   animation: wobbleY 3s linear infinite;

@@ -183,7 +183,6 @@
     font-size: 2vmax;
     color: #9bff9b11;
     text-align: center;
-    font-family: "Helvetica Neue", Helvetica, sans-serif;
   }
 }
 
@@ -193,6 +192,12 @@
 
   > svg {
     width: 50px;
+  }
+}
+
+.loader-box.small {
+  > svg {
+    width: 30px;
   }
 }
 
@@ -216,53 +221,53 @@
 
 .lines {
   position: absolute;
-  left: 10px;
-  top: 10px;
-  animation: links1 10s infinite linear;
+  left: -90px;
+  top: -10px;
+  animation: links1 20s infinite linear;
 }
 
 .lines:nth-child(2) {
-  animation: links2 10s infinite linear;
+  animation: links2 20s infinite linear;
   animation-delay: 1s;
 }
 
 .lines:nth-child(3) {
-  animation: links3 10s infinite linear;
+  animation: links3 20s infinite linear;
   animation-delay: 2s;
 }
 
 .lines:nth-child(4) {
-  animation: links4 10s infinite linear;
+  animation: links4 20s infinite linear;
   animation-delay: 3s;
 }
 
 .lines:nth-child(5) {
-  animation: links5 10s infinite linear;
+  animation: links5 20s infinite linear;
   animation-delay: 4s;
 }
 
 .lines:nth-child(6) {
-  animation: links6 10s infinite linear;
+  animation: links6 20s infinite linear;
   animation-delay: 5s;
 }
 
 .lines:nth-child(7) {
-  animation: links7 10s infinite linear;
+  animation: links7 20s infinite linear;
   animation-delay: 6s;
 }
 
 .lines:nth-child(8) {
-  animation: links8 10s infinite linear;
+  animation: links8 20s infinite linear;
   animation-delay: 7s;
 }
 
 .lines:nth-child(9) {
-  animation: links9 10s infinite linear;
+  animation: links9 20s infinite linear;
   animation-delay: 8s;
 }
 
 .lines:nth-child(10) {
-  animation: links10 10s infinite linear;
+  animation: links10 20s infinite linear;
   animation-delay: 9s;
 }
 
@@ -427,4 +432,3 @@
     left: 10%;
   }
 }
-

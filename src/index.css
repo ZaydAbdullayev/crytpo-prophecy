@@ -41,6 +41,9 @@ input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
+.lil-gui.autoPlace {
+  display: none;
+}
 .contents {
   padding: 0% 0 5%;
 }

@@ -1,10 +1,9 @@
 .button-universal-size {
   position: relative;
-  padding: 1px 8px;
+  padding: 10px 40px;
   line-height: 24px;
-  font-size: 14px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  border-radius: 8px;
+  font-size: 20px;
+  border-radius: 30px;
   border: 0;
   -webkit-user-select: none;
   user-select: none;
@@ -12,7 +11,7 @@
   outline: transparent;
   font-weight: 700;
   color: #fff;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
 }
 
 .button-glitch,
@@ -52,15 +51,21 @@
 }
 
 .button-shine {
-  background: #02da02;
+  background: #000;
+  color: #fff;
   overflow: hidden;
+  border: 1px solid #fff5;
+
+  img {
+    width: 40px;
+    height: 40px;
+    filter: invert(100%) sepia(72%) saturate(58%) hue-rotate(101deg)
+      brightness(111%) contrast(100%);
+  }
 }
 
-.button-shine.soon {
-  width: 100%;
-  /* background: linear-gradient(90deg, #f1e292, #a09349); */
-  /* background: linear-gradient(90deg, #e5c73d, #89792d); */
-  background: linear-gradient(90deg, #e5c749, #886f17);
+.button-shine.tg {
+  animation-delay: 2s;
 }
 
 .button-shine::after {
@@ -68,21 +73,18 @@
   top: -50%;
   left: 150%;
   content: "";
-  width: 18px;
-  height: 50px;
+  width: 30px;
+  height: 100px;
   background: linear-gradient(to left, #ffffff30, #ffffff, #ffffff30);
   box-shadow: 0px 0px 3px 0px #ffffff30;
   transform: skewX(-30deg);
   transition: all 1s ease-in-out;
   animation: shine 1.2s linear infinite;
+  filter: contrast(100);
 }
 
-.button-shine.small::after {
-  top: 0%;
-  width: 10px;
-  height: 14px;
-  transform: skewX(-30deg) rotate(38deg);
-  animation: shine 1.5s linear infinite;
+.button-shine.tg::after {
+  animation-delay: 0.6s;
 }
 
 .gelatine {
@@ -91,65 +93,6 @@
 
 .wobble {
   animation: wobbleX 2.6s ease-in-out infinite;
-}
-
-.soon-container {
-  position: relative;
-  width: 100%;
-}
-
-.soon-gif {
-  width: 100%;
-  position: absolute;
-  top: -130%;
-  left: 0;
-  z-index: 999;
-}
-
-.not-avaible-container {
-  width: 100%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  transform: translateX(-100%);
-  justify-content: flex-end;
-  animation: pushshing 6.5s alternate-reverse infinite;
-
-  > button {
-    border-radius: 0;
-  }
-}
-
-.not-avaible-gif {
-  position: absolute;
-  left: -47px;
-  bottom: 0;
-  width: 60px;
-  object-fit: cover;
-  filter: invert(100%) sepia(72%) saturate(58%) hue-rotate(101deg)
-    brightness(111%) contrast(100%);
-}
-
-.letterpress {
-  width: 100%;
-  text-align: center;
-}
-
-.letterpress p {
-  /* font: bold 18px arial, sans-serif; */
-  font-size: 18px;
-  font-weight: 700;
-  background-color: #000;
-  color: transparent;
-  text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.3);
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-}
-
-.letterpress {
-  background: #666;
-  padding: 2px 5px 0;
 }
 
 @keyframes glitch {

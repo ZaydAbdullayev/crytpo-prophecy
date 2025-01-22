@@ -4,13 +4,11 @@ import { App } from "./home/app";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Layout } from "./layout/layout";
 import "./index.css";
-import { Provider } from "react-redux";
-import { store } from "./context/store";
 import { LinesBg } from "./components/decorations/lines";
+import "./components/decorations/universe"
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Provider store={store}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -19,7 +17,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           </Route>
         </Routes>
       </BrowserRouter>
-    </Provider>
   </React.StrictMode>
 );
 

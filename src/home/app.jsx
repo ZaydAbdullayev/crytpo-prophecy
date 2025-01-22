@@ -1,22 +1,27 @@
-import { useState, useCallback, useMemo } from "react";
+import { useState, useCallback, useMemo, useEffect } from "react";
 import { Card } from "../components/card/card";
 import { Baby, Pushshing } from "../components/decorations/decoration";
 import "./app.css";
-import { coins } from "../mocks/coins";
-import { Comments } from "../components/comments/comments";
+import { coins, coin_ids, prophecys } from "../mocks/coins";
 import { MetrixBackground } from "../components/decorations/bg";
 import { ProphecyModal } from "../components/card/modal";
 import { Loader } from "../components/decorations/loader";
 import { LinesBg } from "../components/decorations/lines";
+import { getCryptoPrices } from "../context/fetch.service";
+import { ShineButton } from "../components/buttons/buttons";
+import tg from "../assets/tg.png";
+import tw from "../assets/twitter-x-logo-black-square-rounded-20852.png";
+import { TypeAnimation } from "react-type-animation";
 
 export const App = () => {
   const [getInfo, setGetInfo] = useState(false);
   const [activeCoin, setActiveCoin] = useState(null);
   const [loading, setLoading] = useState(false);
   const [prophacy, setProphacy] = useState("");
+  const [prices, setPrices] = useState({});
 
   const questions = useMemo(
-    () => ["- Когда станет богатым ?", "- Когда потеряет все ?"],
+    () => ["- When you can becomes rich ?", "- When you lose everything ?"],
     []
   );
 
@@ -30,9 +35,7 @@ export const App = () => {
     setTimeout(() => {
       setLoading(false);
       setGetInfo(false);
-      setProphacy(
-        "Вы станете миллионером через 5 лет, если будете держать Bitcoin на протяжении следующих 3 лет, а затем увидите резкий рост."
-      );
+      setProphacy(prophecys[item.id]);
     }, 3000);
   }, []);
 
@@ -42,10 +45,19 @@ export const App = () => {
     setActiveCoin(null);
   }, []);
 
+  useEffect(() => {
+    getPrices();
+  }, []);
+
+  const getPrices = async () => {
+    const data = await getCryptoPrices(coin_ids);
+    setPrices(data);
+  };
+
   return (
     <div className="w100 df fdc aic jcc gap-20 contents">
       <h1 className="text_3d cp pd-tittle">
-        <span>Палата судьбы HODL</span>
+        <span>Chamber of Destiny HODL</span>
       </h1>
       <div className="text">
         <h1 className="A">Welcome to our crypto prophecy website</h1>
@@ -61,6 +73,7 @@ export const App = () => {
             <Card
               key={coin.id}
               item={coin}
+              prices={prices}
               onClick={() => getInformation(coin)}
             />
           ))}
@@ -75,21 +88,16 @@ export const App = () => {
         <Baby />
         <div className="df fdc">
           {questions.map((question, index) => (
-            <div
+            <TypeAnimation
               key={index}
-              className="typing-demo"
-              style={{ width: `${question.length}ch` }}
-            >
-              {question}
-            </div>
+              sequence={[question, 3000]}
+              speed={200}
+              style={{ fontSize: "28px" }}
+              repeat={Infinity}
+            />
           ))}
         </div>
       </div>
-
-      <h1 className="text_3d cp pd-tittle">
-        <span>Comments</span>
-      </h1>
-      <Comments />
 
       {getInfo && (
         <div className="div">
@@ -110,10 +118,32 @@ export const App = () => {
             <h2>All data about bitcoin is analyzing...</h2>
           </>
         ) : (
-          <i>{prophacy}</i>
+          <TypeAnimation
+            splitter={(str) => str.split(/(?= )/)}
+            sequence={[prophacy, 10000000, ""]}
+            speed={{ type: "keyStrokeDelayInMs", value: 50 }}
+            omitDeletionAnimation={true}
+            style={{ fontSize: "1em", display: "block", textAlign: "center" }}
+            repeat={1}
+          />
         )}
       </ProphecyModal>
       <LinesBg />
+
+      <h1 className="text_3d cp pd-tittle">
+        <span>Social media</span>
+      </h1>
+
+      <div className="df aic gap-20">
+        <ShineButton type="tg">
+          <img src={tg} alt="tg" />
+          Telegram
+        </ShineButton>
+        <ShineButton type="tw">
+          <img src={tw} alt="tw" />
+          Twitter
+        </ShineButton>
+      </div>
     </div>
   );
 };
