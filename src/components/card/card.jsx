@@ -13,6 +13,7 @@ export const Card = ({ item, prices, ...props }) => {
             start={0.0}
             end={prices[item.id]?.usd}
             duration={5}
+            delay={2}
             separator=" "
             decimals={prices[item.id]?.usd?.toString()?.split(".")[1]?.length}
             decimal=","
