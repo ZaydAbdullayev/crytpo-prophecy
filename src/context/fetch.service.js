@@ -15,7 +15,7 @@ export const getCryptoPrices = async (list) => {
 
         }
         const response = await axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=${list}&vs_currencies=usd`, options);
-        sessionStorage.setItem('crypto_prices', JSON.stringify(response.data));
+        sessionStorage.setItem('crypto_prices', JSON.stringify(response?.data));
         console.log(response.data);
         return response.data;
 
