@@ -25,19 +25,9 @@ const scene = new Scene();
 const camera = new PerspectiveCamera(60, innerWidth / innerHeight, 0.1, 100);
 camera.position.set(0, 2, 3);
 
-const wrapper = document.createElement("div");
-wrapper.style.position = "absolute";
-wrapper.style.top = 0;
-wrapper.style.left = 0;
-wrapper.style.width = "100%";
-wrapper.style.height = "100%";
-wrapper.style.zIndex = "-2";
-wrapper.style.pointerEvents = "none";
-
-const canvas = document.createElement("canvas");
-wrapper.appendChild(canvas);
-
-document.body.appendChild(wrapper);
+const canvas = document.createElement('canvas');
+const container = document.querySelector(".bg-universe");
+container.appendChild(canvas);
 const renderer = new WebGLRenderer({ canvas });
 renderer.setSize(innerWidth, innerHeight);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
