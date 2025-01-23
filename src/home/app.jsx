@@ -115,7 +115,7 @@ export const App = () => {
         {loading ? (
           <>
             <Loader />
-            <h2>All data about bitcoin is analyzing...</h2>
+            <h2>All data about {activeCoin?.name} is analyzing...</h2>
           </>
         ) : (
           <TypeAnimation
