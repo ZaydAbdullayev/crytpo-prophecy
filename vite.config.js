@@ -14,5 +14,4 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ["@pqina/flip"],
   },
-  base: "/crypto-prophacy/",
 });
